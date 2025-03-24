@@ -8,6 +8,8 @@ Welcome to the AZ-305 study guide! This repository contains resources and links 
 - **Certification:** Microsoft Certified: Azure Solutions Architect Expert
 - **Exam Link:** [AZ-305 Exam Details](https://learn.microsoft.com/en-us/credentials/certifications/exams/az-305/)
 - **Training Page:** [Microsoft Azure Training](https://learn.microsoft.com/en-us/training/browse/?products=azure)
+- **YouTube Link:** [Watch the Video](https://www.youtube.com/watch?v=i6NzKvGUsBs)
+
 
 ---
 
