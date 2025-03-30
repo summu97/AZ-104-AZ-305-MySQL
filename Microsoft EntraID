@@ -143,4 +143,74 @@ Conditional Access: Provides an extra layer of security before allowing authenti
 - Implemented via Conditional Access policies, which are set of rules that specify the conditions under which sign-ins are evaluated and allowed.
 - Conditional access policy analyzes
   * Signals: Users & location, Device, applications & Real-time risk and verify every access attempt via access controls.
-    - Signals are metadata associatyed with an identity attempting to gain access
+    - Signals are metadata associatyed with an identity attempting to gain access.
+Users or Group membership: Policies target specific users & groups(Including admin roles), giving admins fine0grained control over access.
+Named location information/IP location information: IP address ranges are used to permit or deny access based on geographical locations.
+Device: Policies can be applied based on platform or status of user device.
+Application: Users attempting to access specific applications can trigger different conditional access polocies.
+Real time sign-in risk detection: Signals in Azure AD Identity protection detect risky sign-ins. If risk emerge, policies can prompt actions such as password reset, MFA, or block access pending admin intervention.
+
+Cloud Applications or actions:
+User risk: For customers with identity protection, user risk can be evaluated as part of a conditional acces policy.
+- User risk represents the probability that a given identity or account is compramised.
+
+Common decisions: define the access controls "that deciode what level of access" based on signal information.
+Block access: Most restrictive decision.
+Grant access: least restrictive decision.
+- requires MFA, device to be marked as compliant, hybrid azure AD joined device, approve client application, application protection policy.
+
+We can also use conditional access policy with 365 business premium, E2, E5 Azure AD premium P1 & P2 licenses.
+
+
+-------------------------------------------------
+Types of Azure Roles:
+Azure has three types of roles that can serve same purpose.
+1. Classic Subscription administrative role(Original role system(Retired but do have knowledge on it)): Refer to Older model of Azure access control & include three types.
+- Account Administrator: Billing owner of subscription. Has no access to portal.
+- Service Administrator: Same access of a user who is assigned "Owner" roleat Subscription scope. full access to portal.
+- Co-Administrator: Same access of a user who is assigned "Owner" roleat Subscription scope. Can be many users.
+Works at Subscription level, Resource Group level, Resources level(Azure Account).
+
+2. Azure roles(RBAC): Built on top of Azure Resource Manager(ARM)
+It is a system that provides fine grained access management for Azure resources allowing administrators to grant users specific rights to resources.
+Helps you manaeg who has access to Azure resources, what actions they can perform on resources & at what scope.
+RBAC includes 70 built-in-roles.
+There are four fundamental Azure roles:
+- Owner
+- Contributior
+- Reader
+- User access administrator
+                                   Read              Grant               Create/Update/Delete
+Owner                              Yes               Yes                 Yes
+Contributior                       Yes               No                  Yes
+Reader                             Yes               No                  No
+User access administrator          Yes               Yes                 No
+
+Works at root management group/management group mid level(account admin)
+
+3. Azure Active Directory: Works at Tenant level - Top
+Used to manage Azure AD resources in a directory, Such as creating/Editing Users, asssigning administrative roles to other, resetting user passwords, managing user licenses & managing domains among other tasks.
+   - Global admin
+   - Application admin
+   - Application developer
+   - Billing admin
+This also allows creation of custom roles.
+NOTE: 1 & 2 can serve same purpose but 2 has more granular support.
+
+
+Access Controls(IAM): Allows you to create & assign roles to users
+- For Azure Roles(RBAC system): roles restrict access to resources actions(known as operations)
+  Two types of roles:
+  * Built-in roles: Predefined roles offered by Microsoft in Azure read-only & cannot be altered.
+  * Custom roles: User defined roles with your requirement.
+
+Role assignments: when you apply a role to a service principal(User, Group, Service principal, Managed Identity)
+- It is a way you can control access to resources.
+- role assignment consists of three elements:
+  * Scope(Management--Subscription--Resource Group--Resource): Set of resources that access for th erole assignment applies to.
+  * Role Definition: Set of permissions that determines what actions can be performed such as read, write or delete on various resources.
+  * Sceurity Principal
+Deny Assignment: Block users from performing specific actions even if a role assignment grants them acess. Only way to apply deny assignment is through Azure Blueprints.
+
+Classic Administrator(Retired but do have knowledge on it): Refers to original role system in Azure. Useful when working with Older Azure steups.
+
