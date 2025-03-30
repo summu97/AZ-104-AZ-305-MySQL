@@ -1,0 +1,11 @@
+Azure AD: Cloud based IAM for users to access "External Resources" & "Internal Resources".
+External Resources:
+* Microsofy Office 365
+* Azure Portal
+* SaaS Applications
+
+Internal Resources:
+* Applications within your Internal Network.
+* Access to Workstations On-Premises.
+
+- You can also use it 
