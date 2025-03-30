@@ -8,4 +8,18 @@ Internal Resources:
 * Applications within your Internal Network.
 * Access to Workstations On-Premises.
 
-- You can also use it 
+- You can also use it for SSO(Single Sign-On).
+- Azure AD comes in four editions:
+  * Free tier - MFA, SSO, Basic Security & Usage Reports, User Management
+  * Office 365 Applications
+  * Premium 1 - Hybrid Architecture, AD Group access, Conditional Access
+  * Premium 2 - Identity Protection, Governance
+
+Use Cases: To Authorize & Authenticate to multiple sources. 
+* To your On-Premise Active Directory
+* Web-Applications(using App Registrations)
+* Alow users to login with their IPD's(Identity Providers)
+  Ex: Google, Facebook
+* Office 365/Azure Microsift
+
+Active Directory (vs) Azure 
