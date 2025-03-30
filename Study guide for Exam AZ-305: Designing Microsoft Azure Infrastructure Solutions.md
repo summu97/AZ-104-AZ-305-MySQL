@@ -23,11 +23,11 @@ Welcome to the AZ-305 study guide! This repository contains resources and links 
 ---
 ## An Azure Solutions Architect (with AZ-305) is responsible for:
 
-- **Designing Azure Solutions – Creating infrastructure solutions that meet business needs.**
-- **Hybrid and Multi-Cloud Architecture – Designing solutions for hybrid environments.**
-- **Security & Identity Management – Implementing security, compliance, and identity strategies.**
-- **Storage and Networking – Designing Azure storage, backup, and networking solutions.**
-- **Business Continuity & Disaster Recovery (BCDR) – Ensuring high availability and disaster recovery solutions.**
-- **Migration Strategies – Planning and executing migrations to Azure.**
+- **Designing Azure Solutions** Creating infrastructure solutions that meet business needs.
+- **Hybrid and Multi-Cloud Architecture** Designing solutions for hybrid environments.
+- **Security & Identity Management** Implementing security, compliance, and identity strategies.
+- **Storage and Networking** Designing Azure storage, backup, and networking solutions.
+- **Business Continuity & Disaster Recovery (BCDR)** Ensuring high availability and disaster recovery solutions.
+- **Migration Strategies** Planning and executing migrations to Azure.
 
 
