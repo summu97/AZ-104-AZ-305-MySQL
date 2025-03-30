@@ -1,25 +1,146 @@
-Azure AD: Cloud based IAM for users to access "External Resources" & "Internal Resources".
+Azure AD: Cloud based "Identity and Access Management" for users to access "External Resources" & "Internal Resources".
+
 External Resources:
-* Microsofy Office 365
-* Azure Portal
-* SaaS Applications
+- Microsofy Office 365
+- Azure Portal
+- SaaS Applications
 
 Internal Resources:
-* Applications within your Internal Network.
-* Access to Workstations On-Premises.
+- Applications within your Internal Network.
+- Access to Workstations On-Premises.
 
 - You can also use it for SSO(Single Sign-On).
 - Azure AD comes in four editions:
-  * Free tier - MFA, SSO, Basic Security & Usage Reports, User Management
-  * Office 365 Applications
-  * Premium 1 - Hybrid Architecture, AD Group access, Conditional Access
+  * Free tier - MFA, SSO, Basic Security & Usage Reports, User Management.
+  * Office 365 Applications.
+  * Premium 1 - Hybrid Architecture, AD Group access, Conditional Access.
   * Premium 2 - Identity Protection, Governance
 
-Use Cases: To Authorize & Authenticate to multiple sources. 
-* To your On-Premise Active Directory
-* Web-Applications(using App Registrations)
-* Alow users to login with their IPD's(Identity Providers)
+USE CASE: To Authorize & Authenticate to multiple sources. 
+- Office 365/Azure Microsift
+- To your On-Premise Active Directory
+- Web-Applications(using App Registrations)
+- Alow users to login with their IPD's(Identity Providers)
   Ex: Google, Facebook
-* Office 365/Azure Microsift
 
-Active Directory (vs) Azure 
+  ACTIVE DIRECTORY                                     (vs)                   AZURE ACTIVE DIRECTORY:
+- Old version(On-Premise version)                                           - New version(Cloud version)
+- Both exist now: Based on use case, we use them.
+---------------------------------
+ADDS(Active Directory Domain Service)
+- Servers that users use to authenticate to Directory Service.
+- In some cases you need to setup your own Domain Controllers.
+- Useful when doing lift and shift from on prem to Microsoft Azure & Migrating Active Directory.
+NOTE: In some cases Azure AD doesn't support some domain services.
+
+ADDS provides managed domain services like:
+- Domain Joins
+- Group Policies
+- LDAP(Lightweight Directory Access Protocol)
+- Kerberos/NTLM authentication
+NOTE: You can use these domain services without need of deploying, managing, patch Domain Controllers in cloud.
+---------------------------------
+Active Directory "Tenant":
+- Tenant represents an Organization in Azure Active Directory.
+- It is a dedicated Azure AD Service Instance.
+- Tenant is automatically Created when you Signup for either
+  * Microsoft Azure
+  * Microsoft Intune
+  * Microsoft 365
+
+Active Directory Uses:
+- Can assign Roles.
+- Add Users to Groups.
+- Can enforce Authentication methods such as MFA.
+- Track Devices, User Logins from & Allow/Deny Devices.
+- Assign Microsoft license.
+
+Azure Active Directory has two types of Users:
+- Users: Belongs to your Organization.
+- Guest users: Belongs to another Organization.
+
+Active Directory Groups: Lets resource Owners , assign a set of access permissions to all members of group.
+- Group Contains:
+  * Owners: Has permissions to Add/Remove members.
+  * Members: Have permissions to do things.
+- Assignments: 
+  * You can assign Roles directly to Group.
+  * Can assign Applications directly to Group.
+
+Request to Join Group: Check this
+  * 
+
+
+Active Directory assign Access rights:
+- Four ways to assign resource access rights to users:
+  * Direct Assignment: Resource Owner directly assigns the Users to Resource.
+  * Group Assignment: Owner assigns Group to Resource.
+  * Rule-based assignment: Owner creates a Group and uses a Rule to define which Users can be assigned.
+  * External authority Assignment: Acccess comes from an external source like On-Premise Directory (or) SaaS Application.
+
+Managed Identities: Associates Identities with Internal Resources where these identities have their own Roles & Tokens.
+- Increases security by allowing you to link resources directly to other resources
+- Two Types:
+  * System-assigned Identities: Created & Managed by EntraID, when you create a managed identity in a service instance.
+    - Only that azure Resource can use this identity to request Tokens from EntraID.
+  * User-assigned Identities(Custom managed identity): Created and managed manually
+    - Identity is managed separately from the resource that use it.
+
+System assigned Identity                 (vs)                  User assigned Identity
+FEATURE              SYSTEM-ASSIGNED                                      USER-ASSIGNED 
+Creation             Created as part of Azure resource                    Created as a standalone Azure resource
+Lifecycle            Shared lifecycle with Azure resource                 Independent lifecycle
+Deletion             When resource deleted                                Explicitly deleted
+Shared across        Cannot be shared(Associated with single resource)    Can be shared(Associated with more than one Azure resource)
+Azure Resources
+
+External Identities: Allows people outside your Organization to access your Applications & Resources, while letting them Signin using what they prefer.
+- Opposite people can "bring their own identities". Ex: Google, Facebook
+- Shares Applications with external users(B2B collaboration)
+- Develop Applications inetnded for other Azure Active Directory(Single-Tenant or Multi-Tenant)
+- Develop White-labeled Applications for consumers & Customers(Azure AD B2C)
+
+EntraID Access Reviews(Important)
+- Allows you to regularly review & manage access to resources in your Organization.
+- You can review who has access to resource & determine whether their access is still necessary.
+- Helps maintain security, ensures Authorized individuals have access ti sensitive resources.
+- Access review can be conducted for various resources like applications, groups, sharedpoint online sites.
+- You can configure access review to occur on a regular schedule & select revierers to conduct the reviews.
+- Reviewers can be internal or external to your organization.
+Cycle: Request sent to Users & Resource Owners--Review Current Memberships--Confirm which membership to keep--Remove Stale membership--Report status to admin--again first step.
+
+During access review the reviewer will be presented with a list of people who have access to the resource.Then he can choose to Approve/Revoke access for each indivudial.
+Access can be revoked immediately or scheduled for later date.
+This Helps ensure resources are accessed only by necessary users & that access is revoked when no longer needed.
+
+SSO(Single Sign On): It is a feature that allows users to authenticate once with Azure Active Directory and then access multiple applications & Services without having to authenticate again.
+- When user signin into EntraID with their credentials, EntarID creates security token that can be used to access other resources within the same organization.
+  * This token can be used to authenticate user to other Cloud-based or On-Premises Application that have been integrated with EntraID.
+- SSO supports Cloud based applications such as 365, Salesforce, Dropbox, also On-Premises Applications like SharePoint & SAP.
+- SSO can be used with custom-built in applications using industry-standard protocols such as SAML, OpenID Connect & OAuth.
+
+Several ways you can configure an application for SSO:
+- Choosing SSO method depends on how the application is configured for authentication.
+  * Cloud applications can use OpenID connect, OAuth, SAML, password-based or linked for SSO. SSO can also be Disabled.
+  * On-Premises applications can use password based, integrated windows authentication, header-based or linked for SSO
+  * On prem choices work when applications are configured for application proxy.
+
+
+main SSO Protocol supported in Azure Include:
+- Open ID connect & OAuth: 
+  * OpenID connect is an identity layer built on top od OAuth 2.0
+  * It allows for authentication & authorization of users in a secure and standardized manner.
+
+SAML(Security Assertion Markup Language): It is an XML-based protocol for enhancing a&a data between an identity provider and a service provider.
+- Used for federated authentication scenarios.
+
+Password-based authentication: Traditional username/password way.
+Linked authentication: Azure provides the ability to link multiple accounts from different providers to single user identity. This allows users to authenticate with any of their linked account.
+Integrated Windows Authentication(IWA): Lets users access applications with their windows domain credentials(Using their current windows session for authentication).
+Header-based authentication: In this method, the application accepts an authentication token in the form of a header in each request. The token is validated by the application to authenticate the user.
+Multi-Factor authentication: A security control where after you fill in your credentials, you have to use a second device like phone to confirm that its you logging.
+Conditional Access: Provides an extra layer of security before allowing authenticated users to access data or other assets.
+- Implemented via Conditional Access policies, which are set of rules that specify the conditions under which sign-ins are evaluated and allowed.
+- Conditional access policy analyzes
+  * Signals: Users & location, Device, applications & Real-time risk and verify every access attempt via access controls.
+    - Signals are metadata associatyed with an identity attempting to gain access
