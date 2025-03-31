@@ -165,7 +165,7 @@ We can also use conditional access policy with 365 business premium, E2, E5 Azur
 -------------------------------------------------
 Types of Azure Roles:
 Azure has three types of roles that can serve same purpose.
-1. Classic Subscription administrative role(Original role system(Retired but do have knowledge on it)): Refer to Older model of Azure access control & include three types.
+1. Classic Subscription administrative role(Original role system(Retired but do have knowledge on it. Useful when working with Older Azure steups)): Refer to Older model of Azure access control & include three types.
 - Account Administrator: Billing owner of subscription. Has no access to portal.
 - Service Administrator: Same access of a user who is assigned "Owner" roleat Subscription scope. full access to portal.
 - Co-Administrator: Same access of a user who is assigned "Owner" roleat Subscription scope. Can be many users.
@@ -209,8 +209,51 @@ Role assignments: when you apply a role to a service principal(User, Group, Serv
 - role assignment consists of three elements:
   * Scope(Management--Subscription--Resource Group--Resource): Set of resources that access for th erole assignment applies to.
   * Role Definition: Set of permissions that determines what actions can be performed such as read, write or delete on various resources.
-  * Sceurity Principal
+  * Service Principal: Represents the identity requesting access to Azure resources such as
+    - User: Individuals who has a profile in Azure AD.
+    - Group: Set of Users created in Azure AD.
+    - Service Principal: A security Identity used by Applications or services to access specific Azure Resources.
+    - Managed Identity: An identity in Azure AD that is automatically managed by Azure.
 Deny Assignment: Block users from performing specific actions even if a role assignment grants them acess. Only way to apply deny assignment is through Azure Blueprints.
 
-Classic Administrator(Retired but do have knowledge on it): Refers to original role system in Azure. Useful when working with Older Azure steups.
+Azure Active Directory Roles(Microsoft Entra built-in roles): Azure AD roles are used to manage Azure Ad Resources in a directory such as, Create or Edit users, Assign Administrative roles to others, Reset Passwords, Manage user Locenses & Manage Domains.
+- A few Important built-in Azure AD roles you should know.
+  * Global Administrator: Full access to everything
+  * User Administrator: Full access to Create/Manage users
+  * Billing administrator: Make purchase, manage subscriptions & support tickets.
+NOTE:
+- You can create custom roles but need to purchase either "Azure AD Premium P1 or P2".
+- By default Global Administrator don't have permissions to manage Azure resources(Can gain access to Azure resources when given "User Access Administrator" role).
+-----------------------------------------------
+Azure Roles (vs) Azure Policy
+Azure Roles (RBAC) = Controls WHO can do WHAT (permissions for users).
+Azure Policies ensure that all resources follow a given set of rules. If something goes against the rules, it can:
+- Alert (audit mode)
+- Block (deny mode)
+- Auto-fix (remediation)
+-----------------------------------------------
+POLICY: Set of rules that enforce standards & best practices in Azure, to keep resources secure, compliant & cost-effective by blocking, auditing or fixing issues.
+- They donot restrict access.
+- azure has built in policies that you can use right away.
 
+Policy Definitions: It is a JSON file used to describebusiness rules to control access to resources.
+Policy Assignment: The scope of a policy can effect to. Assigned to User, a Resource Group or Management Group.
+Policy Initiative: Collection of policy definitions.
+-----------------------
+Viewing non-compliant respources: Home > policy > Complicance
+Once a Policy is assigned, it will evaluate for the Compliance state periodically.
+We can see how compliant we are on compliance tab.
+----------------------------
+Azure Policy Use cases:
+Organizational compliance
+Cost control: Can prevent over-provisioning to save costs. Ex: limiting the creation of high-cost VM's
+Security enhancement: Ex: Require secure transfer for all storage accounts.
+Resource Consistency: Enforce concictent configuration, liken specific naming convention or tags etc.
+Regulatory compliance
+--------------------
+Azure Policy Scope: It is the set of resources that the Policy is applied to. When you assign a policy, you can define the scope at which the policy is enforced.
+- hierarchy of scope moves from Broad to Specific(Management Group--Subscription--Resource Group--Resources)
+- At each level you can apply different policies
+- Policies applied at higher level is inherited by lower leves.
+------------------------
+Configuring Azure Policy(Home > policy > Authoring > Def/Assi/Emp)
