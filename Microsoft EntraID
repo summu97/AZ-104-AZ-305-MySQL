@@ -1,32 +1,25 @@
-Azure AD: Cloud based "Identity and Access Management" for users to access "External Resources" & "Internal Resources".
-
-External Resources:
-- Microsofy Office 365
-- Azure Portal
-- SaaS Applications
-
-Internal Resources:
-- Applications within your Internal Network.
-- Access to Workstations On-Premises.
-
+Azure AD: Cloud based "Identity and Access Management" for users to access "External Resources" & "Internal Resources" and also to Authorize & Authenticate to multiple sources.
+- External Resources:
+  * Microsofy Office 365
+  * Azure Portal(On-Premise Active Directory)
+  * SaaS Applications
+- Internal Resources:
+  * Applications within your Internal Network.
+  * Access to Workstations On-Premises.
+- Web-Applications(using App Registrations)
+- Alow users to login with their IPD's(Identity Providers)
+  Ex: Google, Facebook
 - You can also use it for SSO(Single Sign-On).
 - Azure AD comes in four editions:
   * Free tier - MFA, SSO, Basic Security & Usage Reports, User Management.
   * Office 365 Applications.
   * Premium 1 - Hybrid Architecture, AD Group access, Conditional Access.
   * Premium 2 - Identity Protection, Governance
-
-USE CASE: To Authorize & Authenticate to multiple sources. 
-- Office 365/Azure Microsift
-- To your On-Premise Active Directory
-- Web-Applications(using App Registrations)
-- Alow users to login with their IPD's(Identity Providers)
-  Ex: Google, Facebook
-
+-----------------------
   ACTIVE DIRECTORY                                     (vs)                   AZURE ACTIVE DIRECTORY:
 - Old version(On-Premise version)                                           - New version(Cloud version)
 - Both exist now: Based on use case, we use them.
----------------------------------
+-----------------------
 ADDS(Active Directory Domain Service)
 - Servers that users use to authenticate to Directory Service.
 - In some cases you need to setup your own Domain Controllers.
