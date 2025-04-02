@@ -1,0 +1,41 @@
+SQL: Structure Query Language
+- Organized collection of data that is stored & accessed electrically.
+- It is essential for handling large amount of data information in structured & efficient manner.
+- Using this we can perform "CRUD" operations.
+
+DBMS: Database Management System
+- Software that allows users to define, create, maintain & control access to database.
+- It acts as intermediary between user & Database.
+NOTE: "MySQL" is DBMS software by Oracle.
+
+Types of Database:
+- Centralized, NoSQL, Relational, Cloud, Distributed etc.....
+
+Relational Database: Data is stored in Tables format.
+Non-Relational Database: MongoDB
+
+To deal with Relational Database we use "SQL" programming language.
+
+SQL Database:
+- Data is stored in tables format.
+- It can have any number of tables & tables have actual data in it.
+
+SQL Commands:
+- DDL(Data Definition Language): CREATE, DROP, ALTER, TRUNCATE, RENAME
+- DQL(DATA QUERY LANGUAGE): SELECT
+- DML(Data Manipulation Language): INSERT, UPDATE, DELETE, LOCK, 
+Advaced DBMS concepts:
+- DCL(Data Control Language): GRANT, REVOKE(for user permissions)
+- TCL(Transaction Control Language): BEGINTRANSACTION, COMMIT, ROLLBACK, SAVEPOINT(used while transaction)
+
+DELETE vs TRUNCATE
+using DELETE you can use WHERE and remove particular row data and it can be undo
+but TRUNCATE you can completely delete data and cant undo
+
+
+SQL Datatypes:
+Datatype              Description                                                Example
+- INT                 Stadard integer type, 4-byte size(for small names)          age INT
+- BIGINT              8-byte size(for large names)                                total_sales BIGINT
+- FLOAT               4-bytes(decimal values 4.11 etc)                            price FLOAT
+- DOUBLE              
