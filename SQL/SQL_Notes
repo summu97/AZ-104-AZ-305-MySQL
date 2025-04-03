@@ -38,4 +38,9 @@ Datatype              Description                                               
 - INT                 Stadard integer type, 4-byte size(for small names)          age INT
 - BIGINT              8-byte size(for large names)                                total_sales BIGINT
 - FLOAT               4-bytes(decimal values 4.11 etc)                            price FLOAT
-- DOUBLE              
+- DOUBLE              8-bytes decimal values x.11111....                          rating DOUBLE
+- DECIMAL             An exact numeric value with precision 'p' & scale 's'       salary DECIMAL(10, 2)
+- CHAR(n)             For fixed length characters                                 gender CHAR(1)
+- VARCHAR(n)          For variable length characters                              email VARCHAR(100)
+- TEXT                Unlimited length characters                                 description TEXT
+- 
