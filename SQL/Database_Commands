@@ -1,0 +1,82 @@
+To Create Database:                      CREATE DATABASE db_name;
+To Delete Database:                      DELETE DATABASE db_name;
+To Use Database:                         USE DATABASE db_name;
+To Show Databases:                       SHOW DATABASES;
+-------------------------
+To Create Table:                         CREATE TABLE table_name(Cloumn1 Datatype, Column2 Datatype,.....);
+To See Created Tables:                   SHOW TABLES;
+
+EX: 
+CREATE TABLE Students (
+    student_id INT,
+    student_name VARCHAR(100),
+    marks INT,
+    percentage FLOAT
+);
+
+SHOW TABLES;
+-------------------------
+KEYS: Primary key,Composite Primary key, Foreign key
+1. Primary key: Unique Identifier for each record in a Database Table(must be unique value).
+2. Foreign key: Refers to primary key of another table(can refer any number of foreign keys in a table).
+NOTE: 
+- Only one unique Primary key & not null.
+- Foreign keys can be multiple & null.
+
+Example:
+CREATE TABLE movies (
+     movie_id INT PRIMARY KEY AUTO_INCREMENT,
+     title VARCHAR(255) NOT NULL,
+     release_year YEAR NOT NULL,
+     genre VARCHAR(255) NOT NULL,
+     language VARCHAR(50) DEFAULT 'Telugu',
+     duration_minutes INT NOT NULL,
+     rating DECIMAL(3, 1),
+     director_id INT,
+     FOREIGN KEY(director_id) REFERENCES Directors(director_id)
+);
+
+CREATE TABLE Directors (
+     director_id INT PRIMARY KEY AUTO_INCREMENT,
+     name VARCHAR(255) NOT NULL,
+     dob DATE,
+     nationality VARCHAR(255),
+     awards TEXT
+);
+NOTE: From above examples movies table depends on Directors table so first you need to create Directors table and then create movies.
+
+3. Composite Primary key: If you want to put two ID's as primary keys then its called Composite Primary key.
+EX:
+CREATE TABLE orders (
+    order_id INT,
+    product_id INT,
+    quantity INT,
+    PRIMARY KEY (order_id, product_id)
+);
+
+Explanation of keys used in it:
+AUTO_INCREMENT: Automatically increases id numbers.
+NOT NULL: The places of cloumn should not be empty.
+-------------------------
+Inserting Values into Table:
+1. Inserting single value:
+INSERT INTO Table_name(column1, column2, column3,....) VALUES
+('value1', 'value2', 'value3',.......);
+
+2. Inserting Multiple values:
+INSERT INTO Table_name(column1, column2, column3,....) VALUES
+('value1', 'value2', 'value3',.......),
+('value4', 'value5', 'value6',.......),
+('value7', 'value8', 'value9',.......),
+('value10', 'value11', 'value12',.......);
+-------------------------
+READING DATA FROM TABLE:
+1. Basic Syntax:                                            SELECT Column1, Cloumn2,.........;
+2. Read all Data:                                           SELECT * FROM table_name;
+This will display every column data.
+3. Read particular column data:                             SELECT Cloumn1 FROM table_name;
+This will display Clumn1 data.
+4. To fetch data in a specific order, use 'ORDER BY':       SELECT * FROM table_name ORDER BY Column1, Column2,.....;
+5. To filter specific records, use WHERE:                   SELECT * FROM Directors WHERE director_id = 1;
+-------------------------
+CONSTRAINTS:
