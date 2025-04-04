@@ -1,0 +1,50 @@
+Helps you saveguard cryptographic keys & other secrets used by cloud applications and services.
+KeyVault focuses on three things:
+1. Certificate management: For public and private SSL certificates.
+2. Key management: Create and control encrypted keys used to encrypt your data.
+3. Secrets management: Control access to tokens, passwords, certificates, API keys and other secrets.
+NOTE: Certificates contain key pairs.
+-------------------
+HSM(Hardware Security Management): Piece f hardware used to store encrypted keys.
+- It follows following standards recognized by US & Canadian Govt for securing your keys etc:
+  * FIPS- Federal Information Processing Standard
+  * HSM's that are multi-tenant are FIPS 140-2 level2 Compliant(multiple customers virtually isolated on an HSM).
+  * HSM's that are single-tenant are FIPS 140-2 level3 Compliant(single customer on a dedicated HSM).
+-------------------
+Azure KeyVault-Vault:
+Azure KeyVault provides two types of containers:
+1. Vaults: Supports software & HSM backend keys.
+2. HSM pools: Only support HSM backend keys.
+    - to activate it, provide a min of 3 RSA key-pairs(max of 10)
+    - Specify min no keys req to decrypt security domain(called quorum).
+NOTE: 
+- You do not choose container on creation, instead choose Standard or Premium.
+- When you choose Premium & create enough RSA key pairs, you will begin to use HSM pools.
+-------------------
+Azure KeyVault Rest API: Acts as middle man between Application and KeyVault.
+Used to programmatically manage Azure KeyVault resources, allowing you to perform operations such as 
+- Create/Import/Revoke/Delete Keys or Secrets.
+- Authorize users or applications to access its keys or secrets.
+- Monitor & manage Key usage.
+
+Azure KeyVault rest API supprts three types of authentication:
+1. Managed Identities(most recomended).
+2. Service Principal & Cretificate: Uses a certificate for authentication.
+3. Service Principal & Secret: Uses Identity & Secret key.
+-------------------
+Soft delete: Allows you to recover or prmanently delete Secrets fr the duration of retention period(it is enabled by default).
+-------------------
+Azure KeyVault Pricing:
+AKV has two pricing tiers:
+1. Standard(Only software protected)
+2. Premium(Both software and HSM protected).
+-------------------
+Azure KeyVault Double encryption
+- It is where two or more independent layers of encryption are enabled to protect against compromises of any one layer of encryption.
+- Microsoft has two layered approach each for 'Data AT-Rest', 'Data In-Transit'.
+
+Data encryption using customer-managed keys.
+Infrastructure encryption using Platform-managed keys.
+
+Transit encryption using TLS 1.2
+Additional layer of encryption provided at infra level
