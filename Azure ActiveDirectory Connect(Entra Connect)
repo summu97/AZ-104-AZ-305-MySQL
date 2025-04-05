@@ -1,10 +1,10 @@
-Use ful when Integration with On-Premises:
+Useful when Integration with On-Premises:
 - It is a tool provided by Microsoft that enables organizations to synchronize On-Premises active directory with Azure AD.
 - It enables Organizations to extend their On-Premises identities & security policies to cloud & enables easire access to cloud-based applications.
 - It allows SSO from On-Premises workstations to microsoft Azure.
 -------------------
 Azure Active Directory Features:
-- Password Hash Synchronization: This feature Syncs users passwird hashes fron On-premises AD to Azure AD, enabling the same sign-in method for both.
+- Password Hash Synchronization: This feature Syncs users password hashes from On-premises AD to Azure AD, enabling the same sign-in method for both.
 - Pass through Authentication: This allows users to maintain the same password across on-premises & cloud platforms without needing a separate federated environmant setup.
 - Federation Integration: An optional feature, it facilitates a hybrid setup using On-Premises AD FS infrastructure & provides management tools like certificate renewal & server deployment.
 - Synchronization: This is responsible for creating & alining users, groups & other objects between On-Premise & cloud ensuring identiti information matches across both.
@@ -16,15 +16,15 @@ Steps for installation, configuring, and synchronizing On-Premises AD with Azure
 3. Synchronize directories: Azure AD Connect syncs On-Premise AD with Azure AD, replicating changes from source to target.
 4. Monitor & Manage: Continuously monitor & manage the synchropnization process to ensure accuracy & meet business needs.
 -------------------
-Azure AD Application Proxy(Entyra Application Proxy):
+Azure AD Application Proxy(Entra Application Proxy):
 - It is a service provided by Microsoft Azure that allows organizations to provide remote access to their On-Premises web applications.
 - It allows users to access the applications securely from anywhere, using any device without exposing application to internet
 - Organizations can publish their On-Premise applications to Cloud, providing secure remote access for users.
-- It allows organizations use thier existing On-Premise infrastructure & application architecture while leveraging benifits of cloud.
-- It provides advanced security features like MFa, Conditional Access policies, ensi=uring only authorized users can access applications.
+- It allows organizations use their existing On-Premise infrastructure & application architecture while leveraging benifits of cloud.
+- It provides advanced security features like MFA, Conditional Access policies, ensuring only authorized users can access applications.
 
 Azure Application Proxy service consists of two main components:
-1. Azure AD Application Proxt connector: A light weight agent that is installed on a server within organizations On-Premise environment.
+1. Azure AD Application Proxy connector: A light weight agent that is installed on a server within organizations On-Premise environment.
 2. Azure AD Application Proxy Service: A Cloud Based service manages the authentication & authorization of users who access the On-Premise web applications through the application proxy connectors.
    - It also routes traffic to application backend servers & enforces policies set by the organization.
 
