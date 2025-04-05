@@ -1,4 +1,4 @@
-Helps you saveguard cryptographic keys & other secrets used by cloud applications and services.
+Helps you safeguard cryptographic keys & other secrets used by cloud applications and services.
 KeyVault focuses on three things:
 1. Certificate management: For public and private SSL certificates.
 2. Key management: Create and control encrypted keys used to encrypt your data.
