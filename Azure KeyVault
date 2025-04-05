@@ -5,7 +5,7 @@ KeyVault focuses on three things:
 3. Secrets management: Control access to tokens, passwords, certificates, API keys and other secrets.
 NOTE: Certificates contain key pairs.
 -------------------
-HSM(Hardware Security Management): Piece f hardware used to store encrypted keys.
+HSM(Hardware Security Management): Piece of hardware used to store encrypted keys.
 - It follows following standards recognized by US & Canadian Govt for securing your keys etc:
   * FIPS- Federal Information Processing Standard
   * HSM's that are multi-tenant are FIPS 140-2 level2 Compliant(multiple customers virtually isolated on an HSM).
@@ -32,7 +32,7 @@ Azure KeyVault rest API supprts three types of authentication:
 2. Service Principal & Cretificate: Uses a certificate for authentication.
 3. Service Principal & Secret: Uses Identity & Secret key.
 -------------------
-Soft delete: Allows you to recover or prmanently delete Secrets fr the duration of retention period(it is enabled by default).
+Soft delete: Allows you to recover or prmanently delete Secrets from the duration of retention period(it is enabled by default).
 -------------------
 Azure KeyVault Pricing:
 AKV has two pricing tiers:
@@ -70,7 +70,7 @@ Encryption type:
 MMK(Microsoft Managed Keys): Managed by Microsoft & we can't see them in vault.
 CMK(Customer Managed Keys): Created and managed by users.
 -------------------
-Azure KeyVault Secrets: To store generic secrets like Passwords & datamase connection strings.
+Azure KeyVault Secrets: To store generic secrets like Passwords & database connection strings.
 - KeyVault stores secrets sequence of octets(8-bit bytes).
 - Each secret with max size of 25k bytes.
 -------------------
@@ -81,7 +81,7 @@ Enables(default is 'true')
 -------------------
 X.509 Certificates:
 PKI(Public Key Infrastructure)
-- It is a set of roles, [policies, hardware, software & procedures needed to create, manage, distribute, use, store & revoke digital certificates & manage Public-Key encryption.
+- It is a set of roles, policies, hardware, software & procedures needed to create, manage, distribute, use, store & revoke digital certificates & manage Public-Key encryption.
 - It is a standard defined by International Telecommunication Union(ITU) For public key certifications.
 - X.509 are used in many internet protocols including SSL/TLS, HTTPS, Signed & Encrypted email, Code signing & Document signing.
 
@@ -93,5 +93,5 @@ Who Issues these Cretificates?
 Certificate Authority(CA): A CA acts as a trusted 3rd party - Trusted both by Subject(Owner) of cert & by party relying upon certs.
 -------------------
 KeyVault Backup & Restore:
-NOTE: If enabled purge protection while creating key vault you ca disable it using "Access Policies" [Access Policies--add purge--save--now go to manage deleted keys--select deleted key & purge option is now available.
+NOTE: If enabled purge protection while creating key vault you can disable it using "Access Policies" [Access Policies--add purge--save--now go to manage deleted keys--select deleted key & purge option is now available.
 -------------------
