@@ -1,0 +1,48 @@
+An Azure Storage Account is a place in the cloud where you can store your data – like files, images, videos, backups, and more.
+
+upported Services: What can you store?
+Blobs – files like photos, videos, documents.
+Files – shared files, like a network drive.
+Queues – messages for apps to talk to each other.
+Tables – simple data storage (like Excel sheets).
+Disks – virtual hard drives for virtual machines.
+--------------------
+Storage Account Kinds:
+- Standard general purpose v1(legacy)
+- Standard general purpose v2
+- Blob Storage(legacy)
+- BlockBlobStorage
+- FileStorage
+You can find it in "Account Kind"
+Performance tiers: How fast can you perform Read & Write operations.
+- Completely depends on "Standard or Premium"
+Access tiers: How often do you access the files - Hot, Cool, Archive
+Replication: How many redundant copies should be made & where - LRS, ZRS, GRS....etc
+Deployment model: Who should deploy the supported services? 
+Two models:
+- Resource Manager
+- Classic
+--------------------
+Azure Blob storage: Object store for storing massive amounts of unstructured data.
+Storage supports three types of blobs:
+1. Block blobs:
+- Stores text & binary data.
+- made up of blocks of data that can be managed individually.
+- Store up to about 4.7TiB of data.
+2. Append blobs:
+- Optimized for append operations.
+- Ideal for scenarios such as logging data from VM.
+3. Page blobs:
+- Stores random access files up to 8TiB in size.
+- Store Virtual Hard drive(VHD) files & serve as disks for Azure VM.
+--------------------
+Multiple ways to move data into Azure Blob Storage:
+azcopy: Easy way to use, CLI tool for linux & Windows.
+Azure Storage Data Movement library: .Net library(uses azcopy underneath).
+Azure Datafactory: An ETL service by Azure.
+Azure import/export service: A service where you ship your physical disks for datatransfer onto Azure.
+--------------------
+Performance tiers(Blob storage)
+Two types:
+- Standard: 
+- Premium: 
