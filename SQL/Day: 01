@@ -1,7 +1,7 @@
-To Create Database:                      CREATE DATABASE db_name;
-To Delete Database:                      DELETE DATABASE db_name;
-To Use Database:                         USE DATABASE db_name;
-To Show Databases:                       SHOW DATABASES;
+To Create Database:                                 CREATE DATABASE db_name;
+To Delete particular Database:                      DELETE DATABASE db_name;
+To Use particular Database:                         USE DATABASE db_name;
+To Show all Databases:                              SHOW DATABASES;
 -------------------------
 To Create Table:                         CREATE TABLE table_name(Cloumn1 Datatype, Column2 Datatype,.....);
 To See Created Tables:                   SHOW TABLES;
@@ -71,7 +71,7 @@ INSERT INTO Table_name(column1, column2, column3,....) VALUES
 ('value10', 'value11', 'value12',.......);
 -------------------------
 READING DATA FROM TABLE:
-1. Basic Syntax:                                            SELECT Column1, Cloumn2,.........;
+1. Basic Syntax:                                            SELECT Column1, Cloumn2,.... FROM table_name;
 2. Read all Data:                                           SELECT * FROM table_name;
 This will display every column data.
 3. Read particular column data:                             SELECT Cloumn1 FROM table_name;
@@ -79,4 +79,3 @@ This will display Clumn1 data.
 4. To fetch data in a specific order, use 'ORDER BY':       SELECT * FROM table_name ORDER BY Column1, Column2,.....;
 5. To filter specific records, use WHERE:                   SELECT * FROM Directors WHERE director_id = 1;
 -------------------------
-CONSTRAINTS:
