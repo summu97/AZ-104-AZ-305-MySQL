@@ -44,5 +44,18 @@ Azure import/export service: A service where you ship your physical disks for da
 --------------------
 Performance tiers(Blob storage)
 Two types:
-- Standard: 
-- Premium: 
+Standard: 
+- Stored on HDD's.
+- Varied performance based on access tiers(Hot, Cool, Archive).
+Use case:
+- Bachups & disaster recovery, Media content, Bulk data processing.
+Premium: 
+- Stored on SSD's.
+- Optimised for low-latency.
+- Higher throughput.
+Use case:
+- Interactive workloads, Analysis, AI or ML, Data transformation.
+An Premium SSD has no moving parts & data is distributed randomly. That is why it can read/write so fast.
+
+IOPS: Input.Output Operations per second(For read/write).
+--------------------
