@@ -1,0 +1,41 @@
+CONSTRAINTS: Specifies rules for data in a table.
+Ex: PRIMARY KEY, NOT NULL, FOREIGN KEY, UNIQUE...
+
+NOT NULL   Ensures that a column doesnot contain null values.
+UNIQUE     Ensures tat all the values in a column or a combination of columns are unique across te rows of the table.
+Ex:
+CREATE TABLE Users (
+  user_id INT,
+  username VARCCHAR(100) UNIQUE
+);
+
+DEFAULT    Provides a default value for a column, when no value is specified during insertion.
+Ex:
+order_date DATE DEFAULT 'CURRENT_DATE'
+
+CHECK      Ensures that all the values in a column satisfy a specific condition. It is used to limit the range of values that can be inserted into a column.
+CREATE TABLE Product (
+  product_id INT PRIMARY KEY,
+  price INT,
+  quality INT CHECK (quality>=0)
+);
+
+WHERE      It is used to filter records in a query based on specific condition.
+Ex:
+SELECT * FROM table_name WHERE condition;
+
+NOTE: WHERE is comparision Operator.
+----------------------------
+Operators with WHERE:
+Arithmetic operator: +, -, *, /, %
+Comparision operator: =, !=, >=, <=, >, <
+Logical operator: AND, OR, NOT, IN, BETWEEN, ALL, LIKE, ANY
+Bitwise operatror: &, |
+----------------------------
+Arithmetic operator examples: Profit or loss of a movie box office collection budget.
+SELECT movie_idm box_office_collection AS profit_or_loss FROM Box_office;
+
+Doubling a movie budget
+SELECT movie_id, budget*2 AS double_budget FROM Box_office;
+----------------------------
+Logial operator:
