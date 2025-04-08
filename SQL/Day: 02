@@ -39,3 +39,69 @@ Doubling a movie budget
 SELECT movie_id, budget*2 AS double_budget FROM Box_office;
 ----------------------------
 Logial operator:
+SELECT title, release_year, language FROM movies WHERE language='telugu' AND release_year=2022;
+SELECT title, release_year, language FROM movies WHERE NOT language='telugu';
+NOTE: If you use IN you can use multile parameters.
+SELECT * FROM table_name WHERE language IN ('malyalam', 'hindi');
+SELECT * FROM movies WHERE release_year BETWEEN 2025 AND 2022;
+----------------------------
+SELECT * FROM movies WHERE title LIKE 'Bahu%';
+- Here '%' means if tere are any continuing characters or not it will select the items that start with 'Bahu' & display it.
+- You can also put like this '%ubali%'.
+----------------------------
+Place holder: It will put random characters & if anything matches it will display it.
+Ex:
+Select * FROM moves WHERE title LIKE 'p_kiri';
+NOTE: 
+- '%' represents zero or more characters.
+- '_' represents single character.
+----------------------------
+ORDER BY      To print the output in either of 'ASC' or 'DESC' orders.
+SELECT column1, column2,..... FROM table_name ORDER BY column1 ASC/DESC, column2 ASC/DESC;
+- If there are two items with same value then it will go to next column & checks the order & decides.
+----------------------------
+LIMIT         How many number of rows to display.
+SELECT column1, column2,...... FROM table_name LIMIT no_of_rows;
+Ex:
+ELECT title, release_year FROM movies LIMIT 5;
+----------------------------
+Aggregate functions:
+
+COUNT      To get the count of rows.
+SELECT COUNT(*) FROM MOVIES;
+
+MAX/MIN        To get maximum or minimum of any value from table.
+SELECT MAX/MIN(budget) FROM table_name;
+
+SUM
+SELECT SUM(budget) FROM table_name;
+
+AVG
+SELECT AVG(budget) FROM table_name;
+----------------------------
+GROUP BY       This clause groups rows that have the same values in specifie columns into summary rows, like 'total', 'average', 'count', etc
+SELECT column1, aggregate_function(column2) FROM table_name GROUP BY column1;
+Ex:
+SELECT language, SUM(box_office_collection) AS total_collection FROM movies m JOIN box_office b ON m.movies_id=b.box_office_id GROUP BY language;
+- This returns total box_office collection for each language
+
+JOIN     To join two tables as one
+Here b & m are short form notations of movies & box_office
+---
+HAVING      This clause is used to filter groups created by the GROUP BY clause. It is similar to the WHERE clause but is used with aggregate functions.
+SELECT column1, aggregate_function(column2) FROM table_name GROUP BY column1 HAVING condition;
+Ex:
+SELECT language, SUM(box_office_collection) AS total_collection FROM movies m JOIN box_office b ON m.movies_id=b.box_office_id GROUP BY language HAVING SUM(box_office_collection)>5.....;
+----------------------------
+Order of mentioning SQL clauses:
+SELECT--FROM--JOIN--WHERE--GROUP BY--HAVING--ORDER BY--LIMIT
+NOTE: You should follow the above order when writing a query.
+
+SELECT      Prints out the table content
+FROM        Specifies the table involved
+JOIN        Joins the table
+WHERE       Filter using a condition
+GROUP BY    Groups the result by something
+HAVING      Filters the result by something
+ORDER BY    Orders the result in ASC/DESC
+LIMIT       Limits the result set to certain number
