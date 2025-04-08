@@ -1,6 +1,6 @@
 An Azure Storage Account is a place in the cloud where you can store your data – like files, images, videos, backups, and more.
 
-upported Services: What can you store?
+supported Services: What can you store?
 Blobs – files like photos, videos, documents.
 Files – shared files, like a network drive.
 Queues – messages for apps to talk to each other.
