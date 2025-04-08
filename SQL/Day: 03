@@ -1,0 +1,100 @@
+UPDATE     Foir modifying existing records
+UPDATE table_name SET column1=value1, column2=value2,..... WHERE condition;
+Ex:
+UPDATE movies SET rating=9.0 WHERE title='RRR';
+NOTE: By default safe mode is enabled i.e, you cannot update/delete/modify anything.
+To disable it use: SET SEL_SAFE_UPDATES=0;
+'0' for off & '1' for on
+
+DELETE     To remove existing records
+DELETE FROM table_name WHERE condition;
+Ex:
+DELETE FROM movies WHERE title='kalki';
+--------------------------
+Cascading for foreign keys: IMP
+Scenario: You have tables that are linked with foreign keys & primary keys, in this scenario you wont be able to delete or update anything in tables. So you must follow below commands to acheive what you want.
+
+ON DELETE CASCADE   If you delete a row in table1 then linked row in table2 will be deleted automatically(automatically deletes all rows in child table that refers the deleted row in the parent table).
+NOTE: this must be set when youre creating the table.
+Ex:
+CREATE DATABASE devara;
+USE devara;
+CREATE TABLE movies (
+  movie_id INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(100),
+  release_year YEAR,
+  genre VARCHAR(100),
+  language VARCHAR(100) DEFAULT 'telugu',
+  duration_minutes INT,
+  rating DECIMAL(3, 1)
+);
+
+CREATE TABLE box_office (
+  box_office_id INT PRIMARY KEY AUTO_INCREMENT,
+  movie_id INT, 
+  budget BIGINT,
+  box_office_collection BIGINT,
+  FOREIGN KEY (movie_id) REFERENCES movies(movies_id),
+  ON DELETE CASCADE
+);
+
+Now you insert some data into tables and run following commands:
+DELETE FROM movies where title='----'
+SELECT * FROM movies;
+SELECT * FROM box_office;
+----
+ON UPDATE CASCADE     Automatically updates all rows in the child table when the referenced row in parent table is updated.
+same example as befor but replace with 'ON DELETE CASCADE'
+----
+Other cascading options:
+SET NULL        If a row in the parent table is deleted or updated , the foreign key in the child table is set ti 'NULL'.
+SET DEFAULT     If a row in parent table is deleted or updated, the foreign key in the child table is set to default value.
+NO ACTION       No action is taken in child table. This can lead to a constraint violation if the operation leaves orphaned rows in the child table.
+RESTRICT        Prevents the delete or update operation on the parent table if there are related rows in child table.
+--------------------------
+Working on tables:
+ALTER TABLE     Adds new columns
+ALTER TABLE table_name ADD column_name datatype constraints;
+Ex:
+ALTER TABLE movies ADD director_id INT;
+
+MODIFY     modifies the existing column.
+ALTER TABLE table_name MODIFY column_name datatype constraints;
+Ex:
+ALTER TABLE movies MODIFY rating DCIMAL(4, 2);
+
+DROP     Dletes a column.
+ALTER TABLE table_name DROP COLUMN column_name;
+Ex:
+ALTER TABLE movies DROP COLUMN duration_minutes;
+
+
+DROP TABLE     Removes table from database.
+DROP TABLE table_name;
+
+RENAME TABLE     Renames table name.
+RENAME TABLE old_table_name TO new_table_name;
+
+TRUNCATE TABLE     Removes all records from table without deleting actual table.
+TRUNCATE TABLE table_name;
+--------------------------
+Joins: To join two tables.
+Consider you have two tables A & B with values.
+
+INNER JOIN     Returns onlu the matching values from both tables.
+SELECT columns FROM table1 INNER JOIN table2 ON table1.column=table2.column;
+Ex:
+SELECT m.title, d.name FROM movies m INNER JOIN directors d ON m.director_id=d.director_id;
+
+FULL JOIN
+
+LEFT JOIN     Returns all row from the left table and the matched rows from right table. If there are no matching values then NULL value is returned for columns from the right table.
+SELECT columns FROM table1 LEFT JOIN table2 ON table1.column=table2.column;
+
+RIGHT JOIN     Similar to LEFT JOIN but takes RIGHT TABLE as base.
+
+NOTE: Both LEFT & RIGHT JOIN's are called OUTER JOIN
+
+CROSS JOIN
+
+SELF JOIN
