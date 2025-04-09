@@ -86,7 +86,8 @@ SELECT columns FROM table1 INNER JOIN table2 ON table1.column=table2.column;
 Ex:
 SELECT m.title, d.name FROM movies m INNER JOIN directors d ON m.director_id=d.director_id;
 
-FULL JOIN
+FULL JOIN     Return all rows when there is match in either of left or right tables. If there are no matching values then NULL value is returned for columns from the non-matching table.
+SELECT columns FROM table1 FULL JOIN table2 ON table1.column=table2.column;
 
 LEFT JOIN     Returns all row from the left table and the matched rows from right table. If there are no matching values then NULL value is returned for columns from the right table.
 SELECT columns FROM table1 LEFT JOIN table2 ON table1.column=table2.column;
@@ -95,6 +96,20 @@ RIGHT JOIN     Similar to LEFT JOIN but takes RIGHT TABLE as base.
 
 NOTE: Both LEFT & RIGHT JOIN's are called OUTER JOIN
 
-CROSS JOIN
+CROSS JOIN     Every item will relate to items in other table in one table(not so useful in realtime).
+SELECT m.title, d.name FROM movies m CROSS JOIN directors d;
 
-SELF JOIN
+SELF JOIN     It is a join of table with itself. This is useful for comparing rows within the same table.
+SELECT a.column, b.column FROM tablea, tableb WHERE condition;
+Ex:
+SELECT a.tite AS movie1, b.title AS movie2, a.release_year FROM movies1, moviesb WHERE a.release_year=b.release_year AND a.movie_id < b.mivie_is;
+--------------------------
+UNION     Used to combie the result-set of two or more SELECT statements.
+SELECT columns FROM table1 UNION SELECT columns FROM table2;
+UNION or UNION ALL
+--------------------------
+Sub queries: Queries inside Queries
+SELECT title, budget FROM movies WHERE budget > (ELECT AVG(budget movies));
+SELECT title, (SELECT name FROM directors WHERE directors.direstor_id=movies.director_id) AS director_name FROM movies;
+SELECT release_year, AVG(budget) AS average_budget FROM (SELECT release_year, budget FROM movies) AS yearly_budget GROUP BY release_year;
+SELECT genre, AVG(ratng) AS avg_genre_rating FROM movies GROUP BY genre HAVING AVG(rating) > (SELECT AVG(rating) FROM movies);
