@@ -25,6 +25,9 @@ SQL Commands:
 - DDL(Data Definition Language): CREATE, DROP, ALTER, TRUNCATE, RENAME
 - DQL(DATA QUERY LANGUAGE): SELECT
 - DML(Data Manipulation Language): INSERT, UPDATE, DELETE, LOCK
+🧱 DDL is like creating/deleting sheets or defining column headers.
+✍️ DML is like adding, editing, or deleting the values in those cells.
+
 Advaced DBMS concepts:
 - DCL(Data Control Language): GRANT, REVOKE(for user permissions)
 - TCL(Transaction Control Language): BEGINTRANSACTION, COMMIT, ROLLBACK, SAVEPOINT(used while transaction)
