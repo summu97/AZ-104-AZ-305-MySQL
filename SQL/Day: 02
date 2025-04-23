@@ -65,7 +65,7 @@ SELECT column1, column2,...... FROM table_name LIMIT no_of_rows;
 Ex:
 ELECT title, release_year FROM movies LIMIT 5;
 ----------------------------
-Aggregate functions:
+Aggregate functions: Used to perform calculations on multiple rows of a table and return a single result.
 
 COUNT      To get the count of rows.
 SELECT COUNT(*) FROM MOVIES;
