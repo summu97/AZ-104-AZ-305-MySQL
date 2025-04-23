@@ -93,7 +93,7 @@ SELECT column1, aggregate_function(column2) FROM table_name GROUP BY column1 HAV
 Ex:
 SELECT language, SUM(box_office_collection) AS total_collection FROM movies m JOIN box_office b ON m.movies_id=b.box_office_id GROUP BY language HAVING SUM(box_office_collection)>5.....;
 ----------------------------
-Order of mentioning SQL clauses:
+Order of mentioning SQL clauses: S F J W G H O L
 SELECT--FROM--JOIN--WHERE--GROUP BY--HAVING--ORDER BY--LIMIT
 NOTE: You should follow the above order when writing a query.
 
