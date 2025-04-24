@@ -81,7 +81,7 @@ TRUNCATE TABLE table_name;
 Joins: To join two tables.
 Consider you have two tables A & B with values.
 
-INNER JOIN     Returns onlu the matching values from both tables.
+INNER JOIN     Returns only the matching values from both tables.
 SELECT columns FROM table1 INNER JOIN table2 ON table1.column=table2.column;
 Ex:
 SELECT m.title, d.name FROM movies m INNER JOIN directors d ON m.director_id=d.director_id;
@@ -109,7 +109,7 @@ SELECT columns FROM table1 UNION SELECT columns FROM table2;
 UNION or UNION ALL
 --------------------------
 Sub queries: Queries inside Queries
-SELECT title, budget FROM movies WHERE budget > (ELECT AVG(budget movies));
+SELECT title, budget FROM movies WHERE budget > (SELECT AVG(budget movies));
 SELECT title, (SELECT name FROM directors WHERE directors.direstor_id=movies.director_id) AS director_name FROM movies;
 SELECT release_year, AVG(budget) AS average_budget FROM (SELECT release_year, budget FROM movies) AS yearly_budget GROUP BY release_year;
 SELECT genre, AVG(ratng) AS avg_genre_rating FROM movies GROUP BY genre HAVING AVG(rating) > (SELECT AVG(rating) FROM movies);
