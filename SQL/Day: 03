@@ -1,4 +1,4 @@
-UPDATE     Foir modifying existing records
+UPDATE     For modifying existing records
 UPDATE table_name SET column1=value1, column2=value2,..... WHERE condition;
 Ex:
 UPDATE movies SET rating=9.0 WHERE title='RRR';
