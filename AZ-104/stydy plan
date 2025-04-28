@@ -1,0 +1,94 @@
+📅 AZ-104 Four-Week Study Plan
+---
+Week 1: Identities + Governance + Cost Management
+
+Focus Areas:
+Azure AD (Users, Groups, Roles, Branding)
+Hybrid Identities (Azure AD Connect basics)
+Conditional Access + MFA
+Azure Subscriptions, Management Groups, RBAC
+Resource Groups, Locks, Tags
+Azure Policies
+Cost Management, Budgets, and Alerts
+
+Tasks:
+🧠 Study theory (Microsoft Learn + Docs)
+✍️ Practice: Create users/groups, assign roles, create locks, apply tags and policies
+📋 Quiz yourself (15-20 short questions)
+========================================
+
+Week 2: Storage + Compute
+Focus Areas:
+Storage Accounts
+Blob Storage (tiers, lifecycle)
+Azure Files and Azure File Sync
+Storage security (keys, SAS, encryption, replication)
+Virtual Machines (Linux + Windows) - Creation, Disks, Sizing
+Backup and Restore VMs
+Availability Sets + Zones
+Automation Accounts and Update Management
+Azure App Services and Containers (AKS basics)
+
+Tasks:
+🧠 Study theory
+🛠️ Lab practice: Deploy storage accounts, VMs, back them up, restore them
+✍️ Create a managed disk snapshot
+📋 Small quizzes on storage and compute topics
+==========================================
+
+Week 3: Networking + Load Balancing + Private Endpoints
+Focus Areas:
+Virtual Networks and Subnets
+Network Peering
+NSG (Network Security Groups)
+Azure Firewall
+Load Balancer (Internal + Public)
+App Gateway, Front Door, Traffic Manager
+VPN Gateway, Site-to-Site VPN, ExpressRoute
+Azure Bastion
+Private endpoints and service endpoints
+Virtual WAN
+
+Tasks:
+🧠 Study core networking concepts
+🛠️ Lab practice: Create a VNet + Subnets, Set up Peering, Deploy Load Balancer
+✍️ Secure VM traffic with NSGs
+📋 Quick 20-question quiz on networking
+===============================================
+
+Week 4: Monitoring + Security + Exam Review
+
+Focus Areas:
+Azure Monitor
+Log Analytics Workspace
+Alerts and Dashboards
+Application Insights
+Network Watcher
+Microsoft Defender for Cloud (Security Center)
+Azure Advisor
+Final review of RBAC, Resource Locks, and Backup
+Practice timed mock exams (minimum 2 full tests)
+
+Tasks:
+🧠 Learn how monitoring tools integrate
+🛠️ Lab practice: Set up Alerts, configure Log Analytics
+✍️ Explore Azure Advisor recommendations
+📋 2 Full Practice Tests
+=======================================
+
+🏁 Last 3 days before exam:
+Focus 100% on practice exams and weak topics.
+Review wrong answers carefully.
+Skim documentation for areas you are unsure about.
+Practice "Deploy → Protect → Monitor" sequence in Portal or CLI.
+
+🚀 Materials to Use:
+Microsoft Learn AZ-104 Path (free)
+Whizlabs, Tutorials Dojo (for mock tests)
+Portal + Cloud Shell for hands-on practice
+
+🎯 Final Tip:
+Consistency beats cramming!
+Do 2–3 hours daily, or at least 15 hours per week, and you’ll be solidly ready for AZ-104.
+========================================
+https://learn.microsoft.com/en-us/training/paths/az-104-administrator-prerequisites/
